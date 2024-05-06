@@ -1,7 +1,7 @@
 spack:
   view: /opt/view
   specs:
-    - diffutils@3.9
+    - diffutils@3.8
     - esmf@8.4%intel
 
   config:
