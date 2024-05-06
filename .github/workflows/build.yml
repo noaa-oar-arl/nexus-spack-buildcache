@@ -17,7 +17,7 @@ jobs:
       - name: Setup Spack
         uses: spack/setup-spack@v2
         with:
-          ref: releases/v0.21
+          ref: develop  # TODO: v0.22?
           buildcache: true
           color: true
           path: spack
@@ -42,6 +42,6 @@ jobs:
 
       - name: Push packages and update index
         run: |
-          spack mirror set --push --oci-username ${{ github.actor }} --oci-password "${{ secrets.GITHUB_TOKEN }}" nexus-spack-buildcache
-          spack -e . buildcache push -j $(($(nproc) + 1)) --base-image ubuntu:22.04 --update-index nexus-spack-buildcache
+          spack mirror set --push --oci-username ${{ github.actor }} --oci-password "${{ secrets.GITHUB_TOKEN }}" local-buildcache
+          spack -e . buildcache push -j $(($(nproc) + 1)) --base-image ubuntu:22.04 --update-index local-buildcache
         if: ${{ !cancelled() }}
