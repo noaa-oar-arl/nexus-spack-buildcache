@@ -2,6 +2,7 @@ spack:
   view: /opt/view
   specs:
     - diffutils@3.8
+    - gettext@0.21
     - esmf@8.4%intel
 
   config:
