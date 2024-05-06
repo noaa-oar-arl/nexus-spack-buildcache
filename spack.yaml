@@ -3,7 +3,7 @@ spack:
   specs:
     - diffutils@3.8
     - gettext@0.21
-    - openmpi@4.1
+    - openmpi@4.0
     #
     - esmf@8.4%intel
 
