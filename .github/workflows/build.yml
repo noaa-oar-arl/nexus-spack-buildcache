@@ -35,8 +35,11 @@ jobs:
           spack compiler add `spack location -i intel-oneapi-compilers`/compiler/latest/linux/bin/intel64
           spack compiler add `spack location -i intel-oneapi-compilers`/compiler/latest/linux/bin
 
-      - name: Find compilers
-        run: spack -e . compiler find --mixed-toolchain
+      - name: Find system tools and compilers
+        run: |
+          spack -e . external find --scope=defaults cmake gmake
+          spack -e . external list
+          spack -e . compiler find --mixed-toolchain
 
       - name: Concretize
         run: spack -e . -v concretize
