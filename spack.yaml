@@ -1,6 +1,7 @@
 spack:
   view: /opt/view
   specs:
+    - berkeley-db~stl
     - diffutils@3.8
     - gettext@0.21
     - hdf5+mpi^intel-oneapi-mpi
