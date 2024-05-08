@@ -22,12 +22,18 @@ jobs:
           color: true
           path: spack
 
-      - name: Get ifort
-        uses: fortran-lang/setup-fortran@v1
-        id: setup-fortran
-        with:
-          compiler: intel-classic
-          version: "2021.9"
+      # - name: Get ifort
+      #   uses: fortran-lang/setup-fortran@v1
+      #   id: setup-fortran
+      #   with:
+      #     compiler: intel-classic
+      #     version: "2021.9"
+
+      - name: Get ifort with Spack
+        run: |
+          spack install intel-oneapi-compilers@2023.1.0
+          spack compiler add `spack location -i intel-oneapi-compilers`/compiler/latest/linux/bin/intel64
+          spack compiler add `spack location -i intel-oneapi-compilers`/compiler/latest/linux/bin
 
       - name: Find compilers
         run: spack -e . compiler find --mixed-toolchain
