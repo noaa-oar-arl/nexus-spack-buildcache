@@ -1,7 +1,7 @@
 spack:
   view: /opt/view
   specs:
-    - esmf@8.4%intel@2021.9 ^netcdf-c~blosc~szip~zstd ^intel-oneapi-mpi ^diffutils@3.8
+    - esmf@8.4%intel@2021.9 ^netcdf-c~blosc~szip~zstd ^intel-oneapi-mpi@2021.9 ^diffutils@3.8
 
   config:
     install_tree:
