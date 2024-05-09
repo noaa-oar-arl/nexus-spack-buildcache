@@ -1,13 +1,7 @@
 spack:
   view: /opt/view
   specs:
-    # - berkeley-db~stl
-    - diffutils@3.8
-    # - gettext@0.21
-    - hdf5+mpi^intel-oneapi-mpi
-    - netcdf-c~blosc
-    #
-    - esmf@8.4%intel^intel-oneapi-mpi
+    - esmf@8.4%intel ^netcdf-c~blosc ^intel-oneapi-mpi
 
   config:
     install_tree:
