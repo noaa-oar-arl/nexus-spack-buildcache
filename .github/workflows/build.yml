@@ -37,7 +37,7 @@ jobs:
 
       - name: Find system tools and compilers
         run: |
-          spack -e . external find --scope=defaults cmake gmake perl automake
+          spack -e . external find --scope=defaults cmake gmake perl automake intel-oneapi-mpi
           spack -e . external list
           spack -e . compiler find --mixed-toolchain
           spack -e . compiler list
