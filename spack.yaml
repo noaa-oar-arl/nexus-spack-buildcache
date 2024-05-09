@@ -3,7 +3,7 @@ spack:
   specs:
     # - hdf5+mpi ^intel-oneapi-mpi
     - hdf5~mpi
-    - esmf@8.4~mpi%intel@2021.9 ^netcdf-c~blosc~szip~zstd ^diffutils@3.8
+    - esmf@8.4~mpi%intel@2021.9 ^netcdf-c~blosc~szip~zstd ^diffutils@3.8 cppflags="-O2 -std=c++11"
 
   config:
     install_tree:
